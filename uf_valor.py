@@ -7,10 +7,7 @@ import os
 import time
 import locale
 
-#replace with .Firefox(), or with the browser of your c
-# https://chromedriver.chromium.org/downloads
-options = webdriver.ChromeOptions()
-# options.add_argument("--incognito")
+options = webdriver.ChromeOptions() #replace with .Firefox(), or with the browser of your choose
 options.add_argument("--headless")
 options.add_argument("--log-level=3")
 
@@ -20,12 +17,11 @@ uf_years = '//*[@id="DrDwnFechas"]'
 uf_table = '//*[@id="contenedor_serie"]'
 uf_anio = '//*[@id="lblAnioValor"]'
 
-driver = webdriver.Chrome(options=options)
+driver = webdriver.Chrome(options=options) #replace with .Firefox(), or with the browser of your choose
 driver.get(url_base)
 driver.find_element_by_xpath(uf_link).click()
 
 select = Select(driver.find_element_by_xpath(uf_years))
-# values = [v.text for v in select.options]
 opciones = select.options
 tablas = []
 
